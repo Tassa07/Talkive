@@ -1,31 +1,40 @@
-🎤 Talkive
+# 🎤 Talkive
 
 ✨ Learn to speak with confidence, express ideas, and improve your public speaking skills in a fun way.
 
-🌟 About The App
+---
 
-Talkive is an IONIC-based application designed to help users learn and practice public speaking interactively and efficiently.
-This application aims to improve communication skills and self-confidence when speaking in front of others.
+## 🌟 About The App
 
-🚀 Features
+Talkive is an IONIC-based application designed to help users learn and practice public speaking interactively and efficiently. This application aims to improve communication skills and self-confidence when speaking in front of others.
 
-- 🗣️ Public Speaking Materials
-- 🎯 Speaking Practice
-- 📱 Modern & Responsive UI
-- ⚡ Fast Performance
-- 🤝 Easy To Use
+---
 
-🛠️ Technologies Used
+## 🚀 Features
 
-- ⚛️ Ionic Framework
-- 🅰️ Angular
-- 🔋 Capacitor
-- 🤖 Android Studio
+* 🗣️ **Public Speaking Materials**
+* 🎯 **Speaking Practice**
+* 📱 **Modern & Responsive UI**
+* ⚡ **Fast Performance**
+* 🤝 **Easy To Use**
 
-🎯 Purpose
+---
+
+## 🛠️ Technologies Used
+
+* [Ionic Framework](https://ionicframework.com/)
+* [Angular](https://angular.dev/)
+* [Capacitor](https://capacitorjs.com/)
+* [Android Studio](https://developer.android.com/studio)
+
+---
+
+## 🎯 Purpose
 
 This application was developed as a learning medium to help users become more confident and skilled in public speaking.
 
-📌 Source Code
+---
+
+## 📌 Source Code
 
 This repository contains the latest source code version used for the application published on Google Play Store.
