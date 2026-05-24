@@ -1,0 +1,230 @@
+.home-page {
+  /* 1. KONSISTENSI JARAK & BACKGROUND */
+  --background: #FAF7FF;
+  --padding-top: calc(20px + env(safe-area-inset-top));
+  --padding-start: 20px;
+  --padding-end: 20px;
+
+  /* IONIC FIX - Memberi ruang agar konten tidak tertutup Navbar */
+  --padding-bottom: 120px;
+
+  .container {
+    width: 100%;
+    display: block;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    .greeting {
+      font-size: 15px;
+      color: #8B7AA8;
+      margin: 0;
+    }
+
+    .title {
+      margin: 4px 0 0;
+      font-size: 28px;
+      font-weight: 800;
+      color: #4A3B60;
+    }
+
+    .avatar {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #7b61ff, #a18aff);
+      border-radius: 16px; // Senada dengan bentuk menu
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(123, 97, 255, 0.2);
+    }
+  }
+
+  /* CARD DASAR */
+  .card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  /* BANNER MOTIVASI */
+  .motivation {
+    background: linear-gradient(135deg, #6c63ff, #8b7bff);
+    color: white;
+
+    .small {
+      font-size: 13px;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    h3 {
+      margin: 8px 0 0;
+      font-size: 19px;
+      font-weight: 700;
+      color: white;
+    }
+  }
+
+  /* DAILY TIP */
+  .tip {
+    border-left: 5px solid #6c63ff;
+    
+    .tip-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #6c63ff;
+      margin-bottom: 6px;
+    }
+
+    .tip-text {
+      font-size: 14px;
+      color: #8B7AA8;
+      line-height: 1.5;
+    }
+  }
+
+  /* GRID MENU */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  /* MENU CARD */
+  .menu-card {
+    min-height: 120px;
+    padding: 20px 15px;
+    border-radius: 22px;
+    text-align: left; // Agar lebih modern seperti aplikasi populer
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+    border: none;
+
+    ion-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 14px;
+      display: inline-block;
+    }
+
+    h4 {
+      margin: 4px 0 2px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #2d2a4a;
+    }
+
+    p {
+      margin: 0;
+      font-size: 11.5px;
+      color: #7a78a6;
+      font-weight: 500;
+    }
+
+    &:active { transform: scale(0.95); }
+
+    /* LOGIC WARNA MENU (SOFT & CERAH) */
+    &.learn { 
+      background: #E0F2FE !important; 
+      ion-icon { background: #BAe6FD; color: #0284C7; }
+    }
+    &.practice { 
+      background: #FEE2E2 !important; 
+      ion-icon { background: #FECACA; color: #DC2626; }
+    }
+    &.record { 
+      background: #DCFCE7 !important; 
+      ion-icon { background: #BBF7D0; color: #16A34A; }
+    }
+    &.progress { 
+      background: #FEF3C7 !important; 
+      ion-icon { background: #FDE68A; color: #D97706; }
+    }
+  }
+
+  /* LOGOUT CARD */
+  .logout-card {
+    margin-top: 25px;
+    background: rgba(255, 91, 91, 0.08);
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #FF5B5B;
+    font-weight: 700;
+    transition: 0.2s;
+
+    &:active { background: rgba(255, 91, 91, 0.15); }
+  }
+}
+
+/* NAVBAR BAWAH (FIXED) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 85px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #f0edff;
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom);
+
+  .nav-item {
+    text-align: center;
+    color: #a0a0c0;
+    flex: 1;
+    transition: 0.3s;
+
+    ion-icon { font-size: 24px; }
+    p { font-size: 10px; margin: 4px 0 0; font-weight: 700; }
+
+    &.active {
+      color: #6c63ff;
+      ion-icon { transform: translateY(-3px); }
+    }
+  }
+}
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }

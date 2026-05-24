@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Talkive</string>
+    <string name="title_activity_main">Talkive</string>
+    <string name="package_name">com.naltylabs.Talkive</string>
+    <string name="custom_url_scheme">com.naltylabs.Talkive</string>
+</resources>

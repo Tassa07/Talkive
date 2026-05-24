@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- BACK BUTTON -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Settings</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="settings-page">
+
+  <div class="container">
+
+    <h2 class="title">Settings</h2>
+
+    <!-- PREFERENCES -->
+    <p class="section-title">Preferences</p>
+    <div class="card">
+
+      <div class="setting-item">
+        <div class="left">
+          <ion-icon name="notifications-outline"></ion-icon>
+          <div>
+            <h4>Daily Reminder</h4>
+            <p>8:00 AM every day</p>
+          </div>
+        </div>
+        <ion-toggle [(ngModel)]="reminder" (ionChange)="saveSettings()"></ion-toggle>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="setting-item">
+        <div class="left">
+          <ion-icon name="volume-high-outline"></ion-icon>
+          <div>
+            <h4>Sound Effects</h4>
+            <p>UI feedback sounds</p>
+          </div>
+        </div>
+        <ion-toggle [(ngModel)]="sound" (ionChange)="saveSettings()"></ion-toggle>
+      </div>
+
+    </div>
+
+    <!-- ACCOUNT -->
+    <p class="section-title">Account</p>
+    <div class="card">
+
+      <div class="setting-item clickable" (click)="editUsername()">
+        <div class="left">
+          <ion-icon name="person-outline"></ion-icon>
+          <div>
+            <h4>Edit Username</h4>
+            <p>{{ username }}</p>
+          </div>
+        </div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="setting-item clickable" (click)="resetProgress()">
+        <div class="left">
+          <ion-icon name="refresh-outline"></ion-icon>
+          <div>
+            <h4>Reset Progress</h4>
+            <p>Clear all your data</p>
+          </div>
+        </div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="setting-item clickable" (click)="toggleAbout()">
+        <div class="left">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <div class="about-content">
+            <h4>About Talkive</h4>
+            <p class="version-text">Version 1.0</p>
+          </div>
+        </div>
+        <ion-icon [name]="isAboutOpen ? 'chevron-down-outline' : 'chevron-forward-outline'"></ion-icon>
+      </div>
+
+      <!-- ABOUT EXPAND -->
+      <div *ngIf="isAboutOpen" class="about-extension">
+        <div class="app-description">
+          <p>
+            <strong>Talkive</strong> adalah aplikasi untuk melatih kemampuan berbicara (speaking skills) secara mandiri.
+          </p>
+          <p>
+            Kamu bisa merekam suara, melatih pelafalan, dan memantau perkembangan belajar dengan tampilan yang modern dan nyaman.
+          </p>
+          <p class="author-tag">Developed by Tassa Safitri</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

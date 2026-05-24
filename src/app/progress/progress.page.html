@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Progress</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="progress-page">
+
+  <div class="container">
+
+    <div class="header">
+      <h2>Your Progress</h2>
+      <p>Track your speaking journey</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="progressChart"></canvas>
+    </div>
+
+    <div *ngIf="history.length === 0" class="empty">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+      <p>No practice data yet</p>
+    </div>
+
+    <div class="list" *ngIf="history.length > 0">
+      <div class="card" *ngFor="let item of history; let i = index">
+
+        <div class="top">
+          <div class="title-section">
+            <h3>{{item.topic}}</h3>
+            <span class="date">{{item.date}}</span>
+          </div>
+
+          <div class="action-section">
+            <span class="score">{{item.score}}%</span>
+
+            <ion-button fill="clear" class="delete-btn" (click)="deleteHistory(i)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+
+        <audio [src]="item.audio" controls></audio>
+
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

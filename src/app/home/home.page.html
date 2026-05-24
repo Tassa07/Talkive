@@ -1,0 +1,81 @@
+<ion-content [fullscreen]="true" class="home-page">
+  <div class="container">
+
+    <div class="header fade-in">
+      <div>
+        <p class="greeting">Hi, {{ username || 'Tassa' }} 👋</p>
+        <h2 class="title">SpeakUp</h2>
+      </div>
+
+      <div class="close-btn pop-in" (click)="goToSettings()">
+        <ion-icon name="settings-outline"></ion-icon> </div>
+    </div>
+
+    <div class="card motivation fade-up delay-1" routerLink="/quiz">
+      <p class="small">Ready for a challenge?</p>
+      <h3>Take a quick quiz 🎯</h3>
+    </div>
+
+    <div class="card tip fade-up delay-2">
+      <p class="tip-title">💡 Daily Tip</p>
+      <p class="tip-text">
+        Slow down your pace — pauses give your words more power.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="menu-card learn fade-up delay-3" routerLink="/learn">
+        <ion-icon name="book-outline"></ion-icon>
+        <h4>Learn</h4>
+        <p>Lessons & quiz</p>
+      </div>
+
+      <div class="menu-card practice fade-up delay-4" routerLink="/practice">
+        <ion-icon name="mic-outline"></ion-icon>
+        <h4>Practice</h4>
+        <p>Exercises</p>
+      </div>
+
+      <div class="menu-card record fade-up delay-5" routerLink="/record">
+        <ion-icon name="radio-button-on-outline"></ion-icon>
+        <h4>Record</h4>
+        <p>Capture voice</p>
+      </div>
+
+      <div class="menu-card progress fade-up delay-6" routerLink="/progress">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+        <h4>Progress</h4>
+        <p>Your journey</p>
+      </div>
+    </div>
+
+    <div class="logout-card fade-up delay-6" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <span>Logout</span>
+    </div>
+
+  </div>
+</ion-content>
+
+<div class="bottom-nav">
+  <div class="nav-item" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <ion-icon name="home"></ion-icon>
+    <p>Home</p>
+  </div>
+  <div class="nav-item" routerLink="/learn" routerLinkActive="active">
+    <ion-icon name="book-outline"></ion-icon>
+    <p>Learn</p>
+  </div>
+  <div class="nav-item" routerLink="/practice" routerLinkActive="active">
+    <ion-icon name="mic-outline"></ion-icon>
+    <p>Practice</p>
+  </div>
+  <div class="nav-item" routerLink="/progress" routerLinkActive="active">
+    <ion-icon name="bar-chart-outline"></ion-icon>
+    <p>Progress</p>
+  </div>
+  <div class="nav-item" routerLink="/settings" routerLinkActive="active">
+    <ion-icon name="settings-outline"></ion-icon>
+    <p>Settings</p>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true" class="record-page">
+
+  <div class="container">
+    
+    <div class="topic-info">
+      <span class="badge">Current Topic</span>
+      <h3>{{ selectedTopic }}</h3>
+    </div>
+
+    <div class="status-text">
+      <h2>{{ isRecording ? 'Recording...' : 'Ready to Start' }}</h2>
+      <p>{{ isRecording ? 'Speak clearly into your microphone' : 'Tap the button and start speaking' }}</p>
+    </div>
+
+    <div class="mic-wrapper" [class.active]="isRecording">
+      <div class="pulse-ring"></div>
+      <div class="mic-circle">
+        <ion-icon [name]="isRecording ? 'mic' : 'mic-outline'"></ion-icon>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <ion-button 
+        expand="block" 
+        class="record-btn"
+        [color]="isRecording ? 'danger' : 'primary'" 
+        (click)="toggleRecord()"
+        mode="ios">
+        
+        <ion-icon slot="start" [name]="isRecording ? 'stop' : 'mic'"></ion-icon>
+        {{ isRecording ? 'Stop Recording' : 'Start Recording' }}
+      </ion-button>
+      
+      <p class="hint" *ngIf="isRecording">Tap stop when you're finished</p>
+    </div>
+
+  </div>
+
+</ion-content>

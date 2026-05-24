@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true" class="result-page">
+
+  <div class="container">
+    <div class="header-section">
+      <h2>Your Performance</h2>
+      
+      <div class="topic-tag" *ngIf="topic">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <span>{{ topic }}</span>
+      </div>
+    </div>
+
+    <div class="score-section">
+      <div class="score-circle">
+        <span class="score-value">{{ score }}%</span>
+        <span class="score-label">Accuracy</span>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="card-header">
+        <ion-icon name="sparkles-outline"></ion-icon>
+        <h3>Expert Feedback</h3>
+      </div>
+      <div class="content-body">
+        <p>{{ feedback }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="audioFile" class="result-card audio-card">
+      <div class="card-header">
+        <ion-icon name="play-circle-outline"></ion-icon>
+        <h3>Listen to Your Voice</h3>
+      </div>
+      <div class="audio-player-wrapper">
+        <audio [src]="audioFile" controls></audio>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <ion-button expand="block" class="home-btn" routerLink="/home" mode="ios">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        Back to Dashboard
+      </ion-button>
+      
+      <ion-button expand="block" fill="clear" routerLink="/practice" color="medium" class="retry-btn">
+        Try Another Topic
+      </ion-button>
+    </div>
+
+  </div>
+
+</ion-content>

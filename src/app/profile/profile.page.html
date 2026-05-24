@@ -1,0 +1,89 @@
+<ion-content [fullscreen]="true" class="profile-page">
+
+  <!-- BACKGROUND -->
+  <div class="bg-decor">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <ion-icon name="musical-notes-outline" class="floating-icon i1"></ion-icon>
+    <ion-icon name="mic-outline" class="floating-icon i2"></ion-icon>
+    <ion-icon name="headset-outline" class="floating-icon i3"></ion-icon>
+    <ion-icon name="chatbubble-outline" class="floating-icon i4"></ion-icon>
+    <ion-icon name="volume-medium-outline" class="floating-icon i5"></ion-icon>
+    <ion-icon name="musical-note-outline" class="floating-icon i6"></ion-icon>
+  </div>
+
+  <div class="container">
+
+    <!-- LOGIN -->
+    <div *ngIf="!isLoggedIn">
+      <div class="logo-section">
+        <div class="logo-circle">
+          <ion-icon name="chatbubble" class="bubble"></ion-icon>
+          <ion-icon name="mic" class="mic"></ion-icon>
+        </div>
+        <h1 class="logo-title">Talkive</h1>
+      </div>
+
+      <div class="welcome-text">
+        <h1>Welcome to Talkive</h1>
+        <p>Practice your voice, offline</p>
+      </div>
+
+      <ion-item lines="none" class="input-item">
+        <ion-icon name="person-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input 
+          [(ngModel)]="name"
+          placeholder="Enter your name"
+          type="text"
+          clearInput="true">
+        </ion-input>
+      </ion-item>
+
+      <ion-button 
+        expand="block" 
+        class="continue-btn"
+        (click)="continue()"
+        [disabled]="!name">
+        Continue
+      </ion-button>
+    </div>
+
+    <!-- PROFILE -->
+    <div *ngIf="isLoggedIn">
+      <div class="logo-section">
+        <div class="logo-circle">
+          <ion-icon name="chatbubble" class="bubble"></ion-icon>
+          <ion-icon name="person" class="mic"></ion-icon>
+        </div>
+        <h1 class="logo-title">My Profile</h1>
+      </div>
+
+      <div class="welcome-text">
+        <h1>Hello, {{ name }}!</h1>
+        <p>Keep practicing and be fluent.</p>
+      </div>
+
+      <div class="stats-card">
+        <ion-item lines="none" class="input-item">
+          <ion-icon name="stats-chart-outline" slot="start" class="input-icon"></ion-icon>
+          <ion-label>
+            <h2>Practice Score</h2>
+            <p>85% Accuracy</p>
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <ion-button 
+        expand="block" 
+        class="continue-btn logout-btn"
+        (click)="logout()">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Logout
+      </ion-button>
+    </div>
+</div>
+
+</ion-content>

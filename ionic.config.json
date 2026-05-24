@@ -1,0 +1,7 @@
+{
+  "name": "Talkive",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

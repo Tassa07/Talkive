@@ -1,0 +1,38 @@
+<ion-content class="quiz-page">
+  <div class="container">
+
+    <div class="header-section">
+      <h2>Quiz</h2>
+      <p class="progress-text">Question {{ currentIndex + 1 }} / {{ questions.length }}</p>
+    </div>
+
+    <p *ngIf="!questions || questions.length === 0" style="text-align: center; color: red;">
+      ❌ Questions kosong
+    </p>
+
+    <div class="card" *ngIf="questions.length > 0 && !isFinished">
+      <h3 class="question-text">{{ questions[currentIndex]?.question }}</h3>
+    </div>
+
+    <div class="options" *ngIf="questions.length > 0 && !isFinished">
+      <div 
+        class="option"
+        *ngFor="let opt of questions[currentIndex]?.options"
+        (click)="selectAnswer(opt)"
+      >
+        {{ opt }}
+      </div>
+    </div>
+
+    <ion-button expand="block" class="next-btn" (click)="nextQuestion()" *ngIf="answered && !isFinished">
+      Next
+    </ion-button>
+
+    <div class="result-container" *ngIf="isFinished">
+      <p class="result-label">Your Final Score:</p>
+      <h2 class="score-value">{{ score }}</h2>
+      <ion-button class="restart-btn" expand="block" (click)="restartQuiz()">Restart Quiz</ion-button>
+    </div>
+
+  </div>
+</ion-content>

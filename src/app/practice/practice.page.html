@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- BACK BUTTON -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Practice</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="practice-page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h2>Practice Topics</h2>
+    <p>Choose a topic and start speaking</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- LIST -->
+  <div class="topic-list">
+    <div 
+      class="card"
+      *ngFor="let topic of topics; let i = index"
+      (click)="goToRecord(topic)"
+      [style.animation-delay]="(i * 0.1) + 's'">
+
+      <div class="text-content">
+        <h3>{{ topic.title }}</h3>
+        <p>{{ topic.desc }}</p>
+      </div>
+
+      <!-- PANAH -->
+      <div class="arrow">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

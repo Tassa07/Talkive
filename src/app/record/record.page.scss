@@ -1,0 +1,64 @@
+.record-page {
+  --background: #FAF7FF;
+
+  .container {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+  }
+
+  h2 {
+    color: #4A3B60;
+    font-size: 22px;
+  }
+
+  p {
+    color: #8B7AA8;
+    margin-bottom: 30px;
+  }
+
+  .mic-wrapper {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background: #EDE7F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+
+    ion-icon {
+      font-size: 50px;
+      color: #7A5C9E;
+    }
+  }
+
+  .mic-wrapper.active {
+    background: #F8A5C2;
+    animation: pulse 1s infinite;
+
+    ion-icon {
+      color: #ffffff;
+    }
+  }
+
+  .record-btn {
+    --background: linear-gradient(90deg, #C9A8E0, #A8C0E8);
+    --border-radius: 12px;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(248, 165, 194, 0.6);
+    }
+    70% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 20px rgba(248, 165, 194, 0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

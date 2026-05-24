@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Learn</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="learn-page">
+
+  <div class="container">
+
+    <div class="header-section">
+      <h2>Learn & Practice</h2>
+      <p>Improve your speaking with exercises</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="card learn-item" routerLink="/quiz">
+      <div class="left">
+        <div class="icon-box quiz-icon">
+          <ion-icon name="help-circle-outline"></ion-icon>
+        </div>
+
+        <div class="text-content">
+          <h3>Quiz</h3>
+          <p>Test your speaking knowledge</p>
+        </div>
+      </div>
+
+      <div class="arrow">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="card learn-item" routerLink="/practice">
+      <div class="left">
+        <div class="icon-box practice-icon">
+          <ion-icon name="mic-outline"></ion-icon>
+        </div>
+
+        <div class="text-content">
+          <h3>Practice</h3>
+          <p>Train your speaking skills</p>
+        </div>
+      </div>
+
+      <div class="arrow">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="card learn-item" routerLink="/record">
+      <div class="left">
+        <div class="icon-box record-icon">
+          <ion-icon name="videocam-outline"></ion-icon>
+        </div>
+
+        <div class="text-content">
+          <h3>Record</h3>
+          <p>Record and evaluate yourself</p>
+        </div>
+      </div>
+
+      <div class="arrow">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

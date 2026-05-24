@@ -1,0 +1,109 @@
+ion-toolbar {
+  --background: #ffffff;
+  --color: #4A3B60;
+}
+
+ion-back-button {
+  --color: #C9A8E0;
+}
+
+.practice-page {
+  --background: #ffffff;
+
+  .header {
+    padding: 25px 20px 10px;
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #4A3B60;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #8B7AA8;
+      margin-top: 5px;
+    }
+
+    .divider {
+      width: 50px;
+      height: 4px;
+      background: #C9A8E0;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  .topic-list {
+    padding: 15px;
+
+    .card {
+      background: linear-gradient(135deg, #ffffff, #f9f6ff);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      box-shadow: 0 10px 25px rgba(201, 168, 224, 0.15);
+      border: 1px solid #F0EAFE;
+
+      transition: all 0.25s ease;
+
+      /* ANIMASI MASUK */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+
+      &:active {
+        transform: scale(0.97);
+      }
+
+      .text-content {
+        h3 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 700;
+          color: #4A3B60;
+        }
+
+        p {
+          margin: 5px 0 0;
+          font-size: 13px;
+          color: #8B7AA8;
+        }
+      }
+
+      .arrow {
+        width: 35px;
+        height: 35px;
+        background: #F3EEFF;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ion-icon {
+          font-size: 18px;
+          color: #C9A8E0;
+          transition: transform 0.2s ease;
+        }
+      }
+
+      &:hover .arrow ion-icon {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
